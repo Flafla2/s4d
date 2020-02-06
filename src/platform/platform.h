@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 
-#include "../lib/math.h"
+#include "../lib/mathutils.h"
 #include "../app.h"
 
 class Platform {

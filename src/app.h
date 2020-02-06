@@ -5,7 +5,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 
-#include "lib/math.h"
+#include "lib/mathutils.h"
 #include "lib/camera.h"
 #include "platform/gl.h"
 #include "scene/scene.h"

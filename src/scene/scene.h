@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../lib/math.h"
+#include "../lib/mathutils.h"
 #include "../platform/gl.h"
 #include "halfedge.h"
 

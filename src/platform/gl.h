@@ -6,7 +6,7 @@
 
 #include <glad/glad.h>
 
-#include "../lib/math.h"
+#include "../lib/mathutils.h"
 
 namespace GL {
 

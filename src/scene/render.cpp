@@ -2,7 +2,7 @@
 #include "render.h"
 #include "util.h"
 #include "../gui.h"
-#include "../lib/math.h"
+#include "../lib/mathutils.h"
 
 #include <imgui/imgui.h>
 

@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "lib/math.h"
+#include "lib/mathutils.h"
 #include <SDL2/SDL.h>
 
 #include "scene/scene.h"

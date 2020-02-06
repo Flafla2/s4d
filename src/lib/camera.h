@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "math.h"
+#include "mathutils.h"
 
 class Camera {
 public:

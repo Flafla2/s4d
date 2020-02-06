@@ -4,16 +4,48 @@ project(scotty3d VERSION 0.1
 				 DESCRIPTION "Scotty3d Future: 15-462 CMU"
 				 LANGUAGES CXX)
 
-set(SOURCES_SCOTTY3D "src/platform/gl.cpp"
-				     "src/platform/platform.cpp"
+set(SOURCES_SCOTTY3D_LIB
+					"src/lib/bbox.h"
+					"src/lib/camera.h"
+					"src/lib/line.h"
+					"src/lib/log.h"
+					"src/lib/mat4.h"
+					"src/lib/mathutils.h"
+					"src/lib/plane.h"
+					"src/lib/quat.h"
+					"src/lib/vec2.h"
+					"src/lib/vec3.h"
+					"src/lib/vec4.h")
+set(SOURCES_SCOTTY3D_SCENE
+					"src/scene/halfedge.cpp"
+					"src/scene/halfedge.h"
+					"src/scene/render.cpp"
+					"src/scene/render.h"
+					"src/scene/scene.cpp"
+					"src/scene/scene.h"
+					"src/scene/util.cpp"
+					"src/scene/util.h")
+set(SOURCES_SCOTTY3D_PLATFORM
+					"src/platform/gl.cpp"
+					"src/platform/gl.h"
+					"src/platform/font.h"
+					"src/platform/platform.cpp"
+					"src/platform/platform.h")
+
+set(SOURCES_SCOTTY3D ${SOURCES_SCOTTY3D_LIB}
+					 ${SOURCES_SCOTTY3D_SCENE}
+					 ${SOURCES_SCOTTY3D_PLATFORM}
 				     "src/app.cpp"
+				     "src/app.h"
 				     "src/gui.cpp"
+				     "src/gui.h"
 				     "src/undo.cpp"
-				     "src/scene/scene.cpp"
-				     "src/scene/render.cpp"
-				     "src/scene/halfedge.cpp"
-				     "src/scene/util.cpp"
+				     "src/undo.h"
 				     "src/main.cpp")
+
+source_group(lib FILES ${SOURCES_SCOTTY3D_LIB})
+source_group(scene FILES ${SOURCES_SCOTTY3D_SCENE})
+source_group(platform FILES ${SOURCES_SCOTTY3D_PLATFORM})
 
 # Set a default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -66,6 +98,8 @@ set_target_properties(scotty3d PROPERTIES
             CXX_STANDARD 17
             CXX_EXTENSIONS OFF
             )
+
+target_include_directories(scotty3d PRIVATE "src/" "src/lib/")
 
 # link found libraries
 target_link_directories(scotty3d PUBLIC ${GTK3_LIBRARY_DIRS})
